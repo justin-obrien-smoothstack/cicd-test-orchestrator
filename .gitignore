@@ -33,3 +33,4 @@ build/
 .vscode/
 /mvnw
 /mvnw.cmd
+/hs_err_pid58784.log
