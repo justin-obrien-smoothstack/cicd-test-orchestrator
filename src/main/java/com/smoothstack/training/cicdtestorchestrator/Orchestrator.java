@@ -15,7 +15,7 @@ import org.springframework.web.client.RestClientResponseException;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://simple-angular-authorized.s3-website.us-east-2.amazonaws.com/*")
 public class Orchestrator {
 
 	@Autowired
@@ -29,10 +29,10 @@ public class Orchestrator {
 			return new ResponseEntity<String>((String) null, HttpStatus.valueOf(e.getRawStatusCode()));
 		}
 	}
-	
+
 	@RequestMapping("/args")
 	public ResponseEntity<String[]> getArgs(RequestEntity<?> request) {
-			return new ResponseEntity<String[]>(staticArgs, HttpStatus.OK);
+		return new ResponseEntity<String[]>(staticArgs, HttpStatus.OK);
 	}
 
 }
